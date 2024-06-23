@@ -36,7 +36,9 @@ jobs:
     steps:
       - uses: actions/checkout@v4
 
-      - run: echo $PATH
+      - run: |
+          mv $HOME/.cargo /tmp
+          echo /tmp/.cargo >> $GITHUB_PATH
 
       - name: Copy files to env.APK_BUILD_DIR
         run: |
