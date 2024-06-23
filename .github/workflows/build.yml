@@ -66,14 +66,15 @@ jobs:
           fileDir: ${{ env.APK_BUILD_DIR }}/android/app/
           encodedString: ${{ secrets.UPLOAD_KEYSTORE }}
 
-      - run: cp $ANDROID_HOME -r /opt/android-sdk
 
-      - run: /opt/android-sdk/cmdline-tools/latest/bin/sdkmanager "ndk;23.1.7779620"
+      - run: $ANDROID_HOME/cmdline-tools/latest/bin/sdkmanager "ndk;23.1.7779620"
+
+      - run: mkdir -p /opt/android-sdk/ndk
+      - run: cp -r $ANDROID_HOME/ndk/23.1.7779620 /opt/android-sdk/ndk
 
       - name: Build APK
         working-directory: ${{ env.APK_BUILD_DIR }}
         env:
-          ANDROID_HOME: /opt/android-sdk
           ANDROID_NDK_HOME: /opt/android-sdk/ndk/23.1.7779620
           ANDROID_NDK_ROOT: /opt/android-sdk/ndk/23.1.7779620
           KEY_ALIAS: ${{ secrets.KEY_ALIAS }}
@@ -105,18 +106,3 @@ jobs:
             ${{ env.APK_BUILD_DIR }}/build/app/outputs/apk/release/aria-${{ github.ref_name }}-armeabi-v7a.apk
             ${{ env.APK_BUILD_DIR }}/build/app/outputs/apk/release/aria-${{ github.ref_name }}-arm64-v8a.apk
             ${{ env.APK_BUILD_DIR }}/build/app/outputs/apk/release/aria-${{ github.ref_name }}-x86_64.apk
-          draft: true
-
-      - name: Build App Bundle
-        working-directory: ${{ env.APK_BUILD_DIR }}
-        env:
-          KEY_ALIAS: ${{ secrets.KEY_ALIAS }}
-          KEY_PASSWORD: ${{ secrets.KEY_PASSWORD }}
-          STORE_PASSWORD: ${{ secrets.STORE_PASSWORD }}
-        run: flutter build appbundle
-
-      - name: Upload App Bundle
-        uses: actions/upload-artifact@v4
-        with:
-          name: App Bundle
-          path: ${{ env.APK_BUILD_DIR }}/build/app/outputs/bundle/release/app-release.aab
