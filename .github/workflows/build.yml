@@ -66,6 +66,10 @@ jobs:
           fileDir: ${{ env.APK_BUILD_DIR }}/android/app/
           encodedString: ${{ secrets.UPLOAD_KEYSTORE }}
 
+      - uses: nttld/setup-ndk@v1
+        with:
+          ndk-version: 23.1.7779620
+
       - name: Build APK
         working-directory: ${{ env.APK_BUILD_DIR }}
         env:
