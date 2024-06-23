@@ -68,11 +68,14 @@ jobs:
 
       - run: $ANDROID_SDK_ROOT/cmdline-tools/latest/bin/sdkmanager "ndk;23.1.7779620"
 
+      - run: mv $ANDROID_HOME opt/android-sdk
+
       - name: Build APK
         working-directory: ${{ env.APK_BUILD_DIR }}
         env:
-          ANDROID_NDK_HOME: $ANDROID_HOME/ndk/23.1.7779620
-          ANDROID_NDK_ROOT: $ANDROID_HOME/ndk/23.1.7779620
+          ANDROID_HOME: opt/android-sdk
+          ANDROID_NDK_HOME: opt/android-sdk/ndk/23.1.7779620
+          ANDROID_NDK_ROOT: opt/android-sdk/ndk/23.1.7779620
           KEY_ALIAS: ${{ secrets.KEY_ALIAS }}
           KEY_PASSWORD: ${{ secrets.KEY_PASSWORD }}
           STORE_PASSWORD: ${{ secrets.STORE_PASSWORD }}
