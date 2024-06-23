@@ -71,6 +71,7 @@ class AndroidEnvironment {
       'bin',
       'sdkmanager$sdkManagerExtension',
     );
+    print("sdkPath: $sdkPath");
 
     log.info('Installing NDK $ndkVersion');
     runCommand(sdkManager, [
