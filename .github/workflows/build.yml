@@ -38,7 +38,7 @@ jobs:
 
       - run: |
           mv $HOME/.cargo /tmp
-          echo /tmp/.cargo >> $GITHUB_PATH
+          echo /tmp/.cargo/bin >> $GITHUB_PATH
 
       - name: Copy files to env.APK_BUILD_DIR
         run: |
