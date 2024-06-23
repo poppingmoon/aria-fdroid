@@ -66,17 +66,13 @@ jobs:
           fileDir: ${{ env.APK_BUILD_DIR }}/android/app/
           encodedString: ${{ secrets.UPLOAD_KEYSTORE }}
 
-      - uses: nttld/setup-ndk@v1
-        id: setup-ndk
-        with:
-          ndk-version: r26d
-          add-to-path: true
+      - run: $ANDROID_SDK_ROOT/cmdline-tools/latest/bin/sdkmanager ndk;23.1.7779620
 
       - name: Build APK
         working-directory: ${{ env.APK_BUILD_DIR }}
         env:
-          ANDROID_NDK_HOME: ${{ steps.setup-ndk.outputs.ndk-path }}
-          ANDROID_NDK_ROOT: ${{ steps.setup-ndk.outputs.ndk-path }}
+          ANDROID_NDK_HOME: $ANDROID_HOME/ndk/23.1.7779620
+          ANDROID_NDK_ROOT: $ANDROID_HOME/ndk/23.1.7779620
           KEY_ALIAS: ${{ secrets.KEY_ALIAS }}
           KEY_PASSWORD: ${{ secrets.KEY_PASSWORD }}
           STORE_PASSWORD: ${{ secrets.STORE_PASSWORD }}
