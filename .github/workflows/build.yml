@@ -68,7 +68,7 @@ jobs:
 
       - uses: nttld/setup-ndk@v1
         with:
-          ndk-version: 23.1.7779620
+          ndk-version: r26d
 
       - name: Build APK
         working-directory: ${{ env.APK_BUILD_DIR }}
