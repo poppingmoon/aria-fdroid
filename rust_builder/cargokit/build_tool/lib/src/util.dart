@@ -164,6 +164,7 @@ class RustupNotFoundException implements Exception {
 String _resolveExecutable(String executable) {
   if (executable == 'rustup') {
     final resolved = Rustup.executablePath();
+    print(resolved);
     if (resolved != null) {
       return resolved;
     }
