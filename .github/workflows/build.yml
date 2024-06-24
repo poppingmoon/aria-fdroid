@@ -80,6 +80,7 @@ jobs:
         env:
           ANDROID_NDK_HOME: /opt/android-sdk/ndk/23.1.7779620
           ANDROID_NDK_ROOT: /opt/android-sdk/ndk/23.1.7779620
+          HOME: /tmp
           KEY_ALIAS: ${{ secrets.KEY_ALIAS }}
           KEY_PASSWORD: ${{ secrets.KEY_PASSWORD }}
           STORE_PASSWORD: ${{ secrets.STORE_PASSWORD }}
