@@ -88,6 +88,7 @@ ProcessResult runCommand(
   Encoding? stdoutEncoding = systemEncoding,
   Encoding? stderrEncoding = systemEncoding,
 }) {
+  print("arguments: ${arguments}");
   if (testRunCommandOverride != null) {
     final result = testRunCommandOverride!(TestRunCommandArgs(
       executable: executable,
@@ -117,6 +118,7 @@ ProcessResult runCommand(
     stderrEncoding: stderrEncoding,
     stdoutEncoding: stdoutEncoding,
   );
+  print("result: $res");
   if (res.exitCode != 0) {
     throw CommandFailedException(
       executable: executable,
