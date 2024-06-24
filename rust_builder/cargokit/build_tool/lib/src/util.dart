@@ -118,7 +118,7 @@ ProcessResult runCommand(
     stderrEncoding: stderrEncoding,
     stdoutEncoding: stdoutEncoding,
   );
-  print("result: $res");
+  print("result: ${res.stdout}");
   if (res.exitCode != 0) {
     throw CommandFailedException(
       executable: executable,
