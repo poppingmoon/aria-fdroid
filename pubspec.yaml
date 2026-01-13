@@ -73,7 +73,11 @@ dependencies:
   image_editor: ^1.6.0
   intl: ^0.20.2
   isar_community: ^3.3.0
-  isar_community_flutter_libs: ^3.3.0
+  isar_community_flutter_libs:
+    git:
+      url: https://github.com/poppingmoon/isar-community
+      ref: 4a11609e843e33c8cc13f867d65ed25d108acc7e
+      path: packages/isar_community_flutter_libs
   json5: ^0.8.2
   json_annotation: ^4.9.0
   just_audio: ^0.10.5
@@ -163,11 +167,6 @@ dependency_overrides:
       url: https://github.com/Baseflow/flutter_cache_manager
       ref: 54904e499a06d0364a2b3f4ca9789e5f829f1879
       path: flutter_cache_manager
-  isar_community:
-    git:
-      url: https://github.com/poppingmoon/isar-community
-      ref: 4a11609e843e33c8cc13f867d65ed25d108acc7e
-      path: packages/isar_community
   unifiedpush_android:
     git:
       url: https://github.com/poppingmoon/flutter-connector
