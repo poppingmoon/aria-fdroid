@@ -167,6 +167,11 @@ dependency_overrides:
       url: https://github.com/Baseflow/flutter_cache_manager
       ref: 54904e499a06d0364a2b3f4ca9789e5f829f1879
       path: flutter_cache_manager
+  isar_community:
+    git:
+      url: https://github.com/poppingmoon/isar-community
+      ref: 4a11609e843e33c8cc13f867d65ed25d108acc7e
+      path: packages/isar_community
   unifiedpush_android:
     git:
       url: https://github.com/poppingmoon/flutter-connector
