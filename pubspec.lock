@@ -1134,8 +1134,8 @@ packages:
     dependency: "direct main"
     description:
       path: "packages/isar_community_flutter_libs"
-      ref: b46a7ac07dc9f9c4710b70018f8cf462a12e5e76
-      resolved-ref: b46a7ac07dc9f9c4710b70018f8cf462a12e5e76
+      ref: fd4f76decdd0197753a4152ecc33acb41090c293
+      resolved-ref: fd4f76decdd0197753a4152ecc33acb41090c293
       url: "https://github.com/poppingmoon/isar-community"
     source: git
     version: "3.3.0"

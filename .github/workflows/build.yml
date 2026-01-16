@@ -129,7 +129,7 @@ jobs:
           KEY_ALIAS: ${{ secrets.KEY_ALIAS }}
           KEY_PASSWORD: ${{ secrets.KEY_PASSWORD }}
           STORE_PASSWORD: ${{ secrets.STORE_PASSWORD }}
-        run: flutter build apk --split-per-abi
+        run: flutter build apk --split-per-abi --verbose
 
       - name: Rename APK
         working-directory: ${{ env.APK_BUILD_DIR }}/build/app/outputs/apk/release
@@ -224,6 +224,7 @@ jobs:
         run: >
           flutter build appbundle
           --build-number ${{ needs.get-build-number.outputs.build-number }}3
+          --verbose
 
       - name: Upload App Bundle
         uses: actions/upload-artifact@b7c566a772e6b6bfb58ed0dc250532a479d7789f # v6.0.0
@@ -281,6 +282,7 @@ jobs:
           flutter build ios
           --no-codesign
           --build-name ${{ needs.get-build-name.outputs.build-name }}
+          --verbose
 
       - name: Copy Runner.app
         run: |
@@ -379,7 +381,7 @@ jobs:
         run: flutter pub get
 
       - name: Build for Windows
-        run: flutter build windows
+        run: flutter build windows --verbose
 
       - name: Create ZIP
         run: >
@@ -453,43 +455,43 @@ jobs:
       - name: Get dependencies
         run: flutter pub get
 
-      - name: Install codemagic-cli-tools
-        run: pip install codemagic-cli-tools
+      # - name: Install codemagic-cli-tools
+      #   run: pip install codemagic-cli-tools
 
-      - name: Fetch signing files
-        env:
-          APP_STORE_CONNECT_ISSUER_ID: ${{ secrets.APP_STORE_CONNECT_ISSUER_ID }}
-          APP_STORE_CONNECT_KEY_IDENTIFIER: ${{ secrets.APP_STORE_CONNECT_KEY_IDENTIFIER }}
-          APP_STORE_CONNECT_PRIVATE_KEY: ${{ secrets.APP_STORE_CONNECT_PRIVATE_KEY }}
-          CERTIFICATE_PRIVATE_KEY: ${{ secrets.CERTIFICATE_PRIVATE_KEY }}
-        run: >
-          app-store-connect fetch-signing-files com.poppingmoon.aria
-          --platform MAC_OS
-          --type MAC_APP_STORE
-          --create
+      # - name: Fetch signing files
+      #   env:
+      #     APP_STORE_CONNECT_ISSUER_ID: ${{ secrets.APP_STORE_CONNECT_ISSUER_ID }}
+      #     APP_STORE_CONNECT_KEY_IDENTIFIER: ${{ secrets.APP_STORE_CONNECT_KEY_IDENTIFIER }}
+      #     APP_STORE_CONNECT_PRIVATE_KEY: ${{ secrets.APP_STORE_CONNECT_PRIVATE_KEY }}
+      #     CERTIFICATE_PRIVATE_KEY: ${{ secrets.CERTIFICATE_PRIVATE_KEY }}
+      #   run: >
+      #     app-store-connect fetch-signing-files com.poppingmoon.aria
+      #     --platform MAC_OS
+      #     --type MAC_APP_STORE
+      #     --create
 
-      - name: Fetch certificates
-        env:
-          APP_STORE_CONNECT_ISSUER_ID: ${{ secrets.APP_STORE_CONNECT_ISSUER_ID }}
-          APP_STORE_CONNECT_KEY_IDENTIFIER: ${{ secrets.APP_STORE_CONNECT_KEY_IDENTIFIER }}
-          APP_STORE_CONNECT_PRIVATE_KEY: ${{ secrets.APP_STORE_CONNECT_PRIVATE_KEY }}
-          CERTIFICATE_PRIVATE_KEY: ${{ secrets.CERTIFICATE_PRIVATE_KEY }}
-        run: >
-          app-store-connect certificates list
-          --type MAC_INSTALLER_DISTRIBUTION
-          --save
+      # - name: Fetch certificates
+      #   env:
+      #     APP_STORE_CONNECT_ISSUER_ID: ${{ secrets.APP_STORE_CONNECT_ISSUER_ID }}
+      #     APP_STORE_CONNECT_KEY_IDENTIFIER: ${{ secrets.APP_STORE_CONNECT_KEY_IDENTIFIER }}
+      #     APP_STORE_CONNECT_PRIVATE_KEY: ${{ secrets.APP_STORE_CONNECT_PRIVATE_KEY }}
+      #     CERTIFICATE_PRIVATE_KEY: ${{ secrets.CERTIFICATE_PRIVATE_KEY }}
+      #   run: >
+      #     app-store-connect certificates list
+      #     --type MAC_INSTALLER_DISTRIBUTION
+      #     --save
 
-      - name: Set up keychain
-        run: keychain initialize
+      # - name: Set up keychain
+      #   run: keychain initialize
 
-      - name: Add certificates
-        run: keychain add-certificates
+      # - name: Add certificates
+      #   run: keychain add-certificates
 
-      - name: Update Xcode project settings
-        run: xcode-project use-profiles
+      # - name: Update Xcode project settings
+      #   run: xcode-project use-profiles
 
       - name: Build for macOS
-        run: flutter build macos --build-name ${{ needs.get-build-name.outputs.build-name }}
+        run: flutter build macos --build-name ${{ needs.get-build-name.outputs.build-name }} --verbose
 
       - name: Install create-dmg
         run: brew install create-dmg
@@ -584,7 +586,7 @@ jobs:
         run: rustup update
 
       - name: Build for Linux
-        run: flutter build linux
+        run: flutter build linux --verbose
 
       - name: Create TAR
         working-directory: build/linux/${{ matrix.arch }}/release/bundle
