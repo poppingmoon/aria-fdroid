@@ -76,7 +76,7 @@ dependencies:
   isar_community_flutter_libs:
     git:
       url: https://github.com/poppingmoon/isar-community
-      ref: fd4f76decdd0197753a4152ecc33acb41090c293
+      ref: bb8d913bc39afd0080bfbcd55ce751db66792be3
       path: packages/isar_community_flutter_libs
   json5: ^0.8.2
   json_annotation: ^4.9.0
