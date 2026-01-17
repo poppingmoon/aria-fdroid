@@ -88,6 +88,9 @@ jobs:
       - name: Remove unused files
         run: rm -rf /opt/hostedtoolcache
 
+      - name: Remove cargokit_options.yaml
+        run: rm cargokit_options.yaml
+
       - name: Copy files to env.APK_BUILD_DIR
         run: |
           mkdir -p $APK_BUILD_DIR
@@ -121,9 +124,6 @@ jobs:
 
       - name: Move Rust toolchain to /tmp
         run: mv $HOME/.cargo /tmp
-
-      - name: Remove cargokit_options.yaml
-        run: rm cargokit_options.yaml
 
       # - name: Set environment variables
       #   run: |
