@@ -1125,17 +1125,18 @@ packages:
   isar_community:
     dependency: "direct main"
     description:
-      name: isar_community
-      sha256: d92315e1862448f236489c2b2b1f9a7ad5ba2405f42d87216234be4fb2e1dd2d
-      url: "https://pub.dev"
-    source: hosted
+      path: "packages/isar_community"
+      ref: "20ab41360ed35ae5c462ce08a04364cf7981f6f7"
+      resolved-ref: "20ab41360ed35ae5c462ce08a04364cf7981f6f7"
+      url: "https://github.com/poppingmoon/isar-community"
+    source: git
     version: "3.3.0"
   isar_community_flutter_libs:
     dependency: "direct main"
     description:
       path: "packages/isar_community_flutter_libs"
-      ref: fd4f76decdd0197753a4152ecc33acb41090c293
-      resolved-ref: fd4f76decdd0197753a4152ecc33acb41090c293
+      ref: "20ab41360ed35ae5c462ce08a04364cf7981f6f7"
+      resolved-ref: "20ab41360ed35ae5c462ce08a04364cf7981f6f7"
       url: "https://github.com/poppingmoon/isar-community"
     source: git
     version: "3.3.0"
