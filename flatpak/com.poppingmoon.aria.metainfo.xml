@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<component type="desktop-application">
+  <id>com.poppingmoon.aria</id>
+  
+  <metadata_license>CC0-1.0</metadata_license>
+  <project_license>AGPL-3.0-only</project_license>
+  
+  <name>Aria</name>
+  <summary>Dive into the interplanetary microblogging platform</summary>
+
+  <developer id="com.poppingmoon">
+    <name>poppingmoon</name>
+  </developer>
+  
+  <description>
+    <p>
+      Aria is a client app for Misskey, a federated social media platform.
+    </p>
+    <p>
+      Supports most of Misskey&apos;s features<br/>Aria supports most of the functions available in Misskey, including viewing various types of timelines, posting notes, editing clips, lists or antennas, etc.
+    </p>
+    <p>
+      Swipe to switch between multiple accounts (of multiple servers)<br/>Aria makes it easy to view different timelines by saving the timelines you want to view as tabs. Adding any account&apos;s timeline to a tab makes it easy to follow topics across servers.
+    </p>
+    <p>
+      Based on the design of the official Misskey Web client<br/>The user interface is designed to look familiar, similar to the official Misskey front-end. It also supports note decoration with MFM.
+    </p>
+    <p>
+      Highly customizable<br/>Numerous settings, such as reaction display size and display of user icons, can be changed and adjusted to your liking. Also, you can change the theme to decorate the application with your favorite colors.
+    </p>
+  </description>
+  
+  <launchable type="desktop-id">com.poppingmoon.aria.desktop</launchable>
+
+  <branding>
+    <color type="primary" scheme_preference="light">#175dc4</color>
+    <color type="primary" scheme_preference="dark">#175dc4</color>
+  </branding>
+
+  <content_rating type="oars-1.1">
+    <content_attribute id="social-chat">moderate</content_attribute>
+    <content_attribute id="social-audio">moderate</content_attribute>
+    <content_attribute id="social-contacts">intense</content_attribute>
+  </content_rating>
+
+  <url type="bugtracker">https://github.com/poppingmoon/aria/issues</url>
+  <url type="homepage">https://misskey.io/@aria_app</url>
+  <url type="contact">https://misskey.io/@aria_app</url>
+  <url type="translate">https://crowdin.com/project/aria-for-misskey</url>
+  <url type="vcs-browser">https://github.com/poppingmoon/aria</url>
+
+  <screenshots>
+    <screenshot type="default">
+      <image>https://raw.githubusercontent.com/poppingmoon/aria/refs/heads/main/fastlane/metadata/android/en-US/images/phoneScreenshots/1.png</image>
+      <caption>A caption</caption>
+    </screenshot>
+    <screenshot>
+      <image>https://raw.githubusercontent.com/poppingmoon/aria/refs/heads/main/fastlane/metadata/android/en-US/images/phoneScreenshots/2.png</image>
+      <caption>A caption</caption>
+    </screenshot>
+  </screenshots>
+
+  <releases>
+    <release version="1.4.1" date="2026-01-18">
+      <url type="details">https://github.com/poppingmoon/aria/releases/v1.4.1</url>
+    </release>
+  </releases>
+
+  <supports>
+    <control>pointing</control>
+    <control>keyboard</control>
+    <control>touch</control>
+  </supports>
+</component>
