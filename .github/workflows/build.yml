@@ -125,7 +125,7 @@ jobs:
 
       - run: echo $ANDROID_HOME/ndk/28.2.13676358/toolchains/llvm/prebuilt/linux-x86_64/bin >> $GITHUB_PATH
 
-      - run: echo ANDROID_NDK_HOME=$ANDROID_HOME/ndk/28.2.13676358 >> $GITHUB_ENV
+      # - run: echo ANDROID_NDK_HOME=$ANDROID_HOME/ndk/28.2.13676358 >> $GITHUB_ENV
 
       - name: Build APK
         working-directory: ${{ env.APK_BUILD_DIR }}
