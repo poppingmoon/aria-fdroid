@@ -137,6 +137,7 @@ jobs:
         run: >
           flutter build apk --split-per-abi
           --target-platform ${{ matrix.target-platform }}
+          --verbose
 
       - name: Rename APK
         id: rename-apk
