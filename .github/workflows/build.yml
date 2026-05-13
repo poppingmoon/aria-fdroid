@@ -553,6 +553,7 @@ jobs:
         with:
           pattern: aria-${{ github.ref_name }}*
           merge-multiple: true
+          skip-decompress: true
       - run: ls -R
 
       - name: Release
