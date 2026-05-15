@@ -115,8 +115,9 @@ jobs:
           fileDir: ${{ env.APK_BUILD_DIR }}/android/app/
           encodedString: ${{ secrets.UPLOAD_KEYSTORE }}
 
-      - name: Set ANDROID_NDK
-        run: echo ANDROID_NDK=$ANDROID_HOME/ndk/28.2.13676358 >> $GITHUB_ENV
+      - name: Set ANDROID_NDK_HOME
+        run: >
+          echo ANDROID_NDK_HOME=$ANDROID_HOME/ndk/28.2.13676358 >> $GITHUB_ENV
 
       - name: Build APK
         working-directory: ${{ env.APK_BUILD_DIR }}
