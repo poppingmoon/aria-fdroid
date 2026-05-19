@@ -79,5 +79,6 @@ parts:
       curl https://sh.rustup.rs -sSf | sh -s -- -y
       flutter pub get
       printenv
+      sed -i "s/local_build: true/https_proxy: $https_proxy/" pubspec.yaml
       flutter build linux --verbose
       mv build/linux/*/release/bundle/* $CRAFT_PART_INSTALL
