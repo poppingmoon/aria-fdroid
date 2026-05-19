@@ -184,7 +184,7 @@ dependency_overrides:
   isar_community:
     git:
       url: https://github.com/poppingmoon/isar-community
-      ref: 5eb87eee19a82131f9dbdf9c56185a16bf78d692
+      ref: b909574668d6fe0325e910a0592bf9b5a05c2764
       path: packages/isar_community
   jni:
     git:
