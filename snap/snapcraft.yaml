@@ -77,8 +77,6 @@ parts:
       git clone https://github.com/flutter/flutter.git --branch $VERSION --depth 1
       export PATH="$(pwd)/flutter/bin:$PATH"
       curl https://sh.rustup.rs -sSf | sh -s -- -y
-      echo $PATH
-      rustup show active-toolchain
       . "$HOME/.cargo/env"
       echo $PATH
       rustup show active-toolchain
